@@ -4,8 +4,10 @@
   "description": "WebpackにてReact環境を構築",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "build-dev": "webpack --mode development"
+    "clean": "rm -fR ./dist",
+    "build": "npm run clean && mkdir ./dist && cp ./index.html ./dist/ && webpack --mode production",
+    "build-dev": "npm run clean && mkdir ./dist && cp ./index.html ./dist/ && webpack --mode development",
+    "start": "serve ./dist"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
     "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
+    "serve": "^12.0.0",
     "style-loader": "^3.2.1",
     "webpack": "^5.49.0",
     "webpack-cli": "^4.7.2"
