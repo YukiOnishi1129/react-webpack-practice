@@ -8,6 +8,7 @@ module.exports = {
     path: path.join(__dirname, "dist", "assets"),
     filename: "bundle.js",
   },
+  devtool: "source-map",
   module: {
     rules: [
       // test: 処理対象となるファイルを正規表現で指定 (.jsのファイルを全てbabel-loaderで処理する)
